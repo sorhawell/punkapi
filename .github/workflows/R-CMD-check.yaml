@@ -24,7 +24,7 @@ jobs:
     - name: Install heroku cli
       run: sudo snap install --classic heroku
     - name: building dockerfile
-      run: Rscript -e 'golem::add_dockerfile_heroku()'
+      run: Rscript -e 'golem::add_dockerfile_heroku()' && docker build -t punkapi .
     - name: pushing dockerfile
       run: |
         heroku container:login
