@@ -10,7 +10,10 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # List the first level UI elements here 
     fluidPage(
-      h1("herocool")
+      tags$div(
+        class = "inner", 
+        mod_main_ui("main_ui_1")
+      )
     )
   )
 }
@@ -33,7 +36,7 @@ golem_add_external_resources <- function(){
     favicon(),
     bundle_resources(
       path = app_sys('app/www'),
-      app_title = 'herocool'
+      app_title = 'punkapi'
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert() 

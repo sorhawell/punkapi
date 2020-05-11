@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # herocool
 
 <!-- badges: start -->
+[![R build status](https://github.com/ColinFay/punkapi/workflows/R-CMD-check/badge.svg)](https://github.com/ColinFay/punkapi/actions)
 <!-- badges: end -->
 
 The goal of herocool is to ...

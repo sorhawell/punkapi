@@ -14,13 +14,13 @@
 ## Fill the DESCRIPTION ----
 ## Add meta data about your application
 golem::fill_desc(
-  pkg_name = "herocool", # The Name of the package containing the App 
+  pkg_name = "punkapi", # The Name of the package containing the App 
   pkg_title = "Example of Deployig a 'golem' App to Heroku via GitHub Action", # The Title of the package containing the App 
   pkg_description = "Example of Deployig a 'golem' App to Heroku via GitHub Action.", # The Description of the package containing the App 
   author_first_name = "Colin", # Your First Name
   author_last_name = "Fay", # Your Last Name
   author_email = "contact@colinfay.me", # Your Email
-  repo_url = NULL # The URL of the GitHub Repo (optional) 
+  repo_url = "https://github.com/ColinFay/punkapi" # The URL of the GitHub Repo (optional) 
 )     
 
 ## Set {golem} options ----
