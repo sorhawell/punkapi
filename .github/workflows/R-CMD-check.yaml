@@ -20,11 +20,12 @@ jobs:
 
   checkout-and-deploy:
    runs-on: ubuntu-latest
+   needs: R-CMD-check
    steps:
     - name: Install heroku cli
       run: sudo snap install --classic heroku
     - name: building dockerfile
-      run: Rscript -e 'golem::add_dockerfile_heroku()' && docker build -t punkapi .
+      run: Rscript -e 'golem::add_dockerfile_heroku(from = "rocker/r-ver:latest")' && docker build -t punkapi .
     - name: pushing dockerfile
       run: |
         heroku container:login
