@@ -29,14 +29,14 @@ jobs:
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-    - name: Install heroku cli
-      run: sudo snap install --classic heroku
-    - name: building dockerfile
-      run: Rscript -e 'golem::add_dockerfile_heroku(from = "rocker/r-ver:latest")' && docker build -t punkapi .
-    - name: pushing dockerfile
-      run: |
-        heroku container:login
-        heroku create punkapi-0-0-0-9000
-        heroku container:push web --app punkapi-0-0-0-9000
-        heroku container:release web --app punkapi-0-0-0-9000
-        heroku open --app punkapi-0-0-0-9000
+      - name: Install heroku cli
+        run: sudo snap install --classic heroku
+      - name: building dockerfile
+        run: Rscript -e 'golem::add_dockerfile_heroku(from = "rocker/r-ver:latest")' && docker build -t punkapi .
+      - name: pushing dockerfile
+        run: |
+          heroku container:login
+          heroku create punkapi-0-0-0-9000
+          heroku container:push web --app punkapi-0-0-0-9000
+          heroku container:release web --app punkapi-0-0-0-9000
+          heroku open --app punkapi-0-0-0-9000
